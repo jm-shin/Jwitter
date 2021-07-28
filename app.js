@@ -4,7 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import tweetsRouter from './router/tweets.js';
-import emailRouter from './router/email.js';
+import authRouter from './router/auth.js';
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(morgan('tiny'));
 
 //routes
 app.use('/tweets', tweetsRouter);
-app.use('/email', emailRouter);
+app.use('/auth', authRouter);
 
 app.use((req, res, next) => {
   res.sendStatus(404);
