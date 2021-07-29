@@ -4,7 +4,7 @@ import server from '../app.js';
 const should = chai.should();
 
 chai.use(chaiHttp);
-
+// 성공,실패시의 케이스를 작성
 describe('tweet router test', function() {
     //GET
     describe('GET request on /', function (){
@@ -20,11 +20,11 @@ describe('tweet router test', function() {
     describe('GET request on /:id', () => {
         it('should return tweet by id',  (done) => {
             const compareData = {
-                "id": "1",
-                "text": "화이팅!",
-                "name": "Bob",
-                "username": "bob",
-                "url": "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-1.png"
+                id: "1",
+                text: "화이팅!",
+                name: "Bob",
+                username: "bob",
+                url: "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-1.png"
             }
             chai.request(server)
                 .get('/tweets/1')
@@ -36,7 +36,7 @@ describe('tweet router test', function() {
                     res.body.username.should.equal(compareData.username);
                     res.body.url.should.equal(compareData.url);
                     done();
-                })
+                });
         });
     });
 
