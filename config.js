@@ -20,10 +20,13 @@ export const config = {
   host: {
     port: parseInt(required('HOST_PORT', 8080)),
   },
-  db: {
+  mysql: {
     host: required('DB_HOST'),
     user: required('DB_USER'),
     database: required('DB_NAME'),
     password: required('DB_PASSWORD'),
   },
+  mongo: {
+    host: required('DB_MONGO_HOST'),
+  }
 };
